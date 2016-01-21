@@ -2,13 +2,16 @@
 import scraperwiki
 import lxml.html
 
-
+# next line uses the scrape function from the scraperwiki  library, applies it to the url in "" and stores it as object in html
 html = scraperwiki.scrape("http://uk.soccerway.com/teams/netherlands/fortuna-sittard/")
 print html
-# # Find something on the page using css selectors
-# root = lxml.html.fromstring(html)
-# root.cssselect("div[align='left']")
-#
+# next line takes the fromstring function from the lxml.html library and applies it the html variable and finally stores it in root
+root = lxml.html.fromstring(html)
+# use a selector function for html that helps to find markers: it grabs 'td' tags and puts  in  tds (plural of td)
+tds = root.cssselect("td")
+print tds
+
+
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
