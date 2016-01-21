@@ -10,7 +10,7 @@ root = lxml.html.fromstring(html)
 # use a selector function for html that helps to find markers: it grabs 'td' tags and puts  in  tds (plural of td)
 tds = root.cssselect("td")
 # print tds
-use for loop to go through each item & do something 
+# use for loop to go through each item & do something 
 for td  in  tds:
   # attach to lxml or lxml object
   print lxml.html.tostring(td)
