@@ -9,8 +9,13 @@ html = scraperwiki.scrape("http://uk.soccerway.com/teams/netherlands/fortuna-sit
 root = lxml.html.fromstring(html)
 # use a selector function for html that helps to find markers: it grabs 'td' tags and puts  in  tds (plural of td)
 tds = root.cssselect("td")
-print tds
-
+# print tds
+use for loop to go through each item & do something 
+for td  in  tds:
+  # attach to lxml or lxml object
+  print lxml.html.tostring(td)
+  print td.text
+  
 
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
