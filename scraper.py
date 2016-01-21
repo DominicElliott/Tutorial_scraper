@@ -12,10 +12,13 @@ tds = root.cssselect("td")
 # print tds
 # use for loop to go through each item & do something 
 for td  in  tds:
-  # attach to lxml or lxml object
-  print lxml.html.tostring(td)
-  print td.text
-  
+# attach to lxml or lxml object using a comma to get it to do more than one thing, this then that
+# print "HTML tag+text", lxml.html.tostring(td)
+# print "HTML text", td.text
+    record = {"cell" : td.text}
+    print record
+# in below, first parameter is unique key, second is database
+    scraperwiki.sqlite.save(["cell"], record)
 
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
