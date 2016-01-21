@@ -21,6 +21,8 @@ for td in  tds:
     record = {"cell" : td.text, "index" : indexno}
 # in below, first parameter is unique key - change it to index to makes  sure it's not 0  -  second is database. index specifies what part of record is unique key
     scraperwiki.sqlite.save(["index"], record)
+    
+
 
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
