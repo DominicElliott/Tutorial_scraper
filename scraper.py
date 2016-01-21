@@ -19,7 +19,6 @@ for td in  tds:
 # print "HTML tag+text", lxml.html.tostring(td)
 # print "HTML text", td.text
     record = {"cell" : td.text, "index" : indexno}
-print record
 # in below, first parameter is unique key - change it to index to makes  sure it's not 0  -  second is database. index specifies what part of record is unique key
     scraperwiki.sqlite.save(["index"], record)
 
